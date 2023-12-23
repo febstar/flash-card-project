@@ -1,7 +1,8 @@
 from tkinter import *
 import pandas
-import random
 import math
+import secrets
+
 BACKGROUND_COLOR = "#B1DDC6"
 window = Tk()
 window.title("Flashy")
@@ -61,7 +62,7 @@ def randomize():
     title = canvas.create_text(400, 150, text="Title", font=("Ariel", 40, "italic"))
     word = canvas.create_text(400, 263, text="Word", font=("Ariel", 50, "bold"))
     global ran
-    ran = random.choice(to_learn)
+    ran = secrets.SystemRandom().choice(to_learn)
     global a
     a = ran["French"]
     global b
